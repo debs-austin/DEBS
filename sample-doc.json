@@ -1,0 +1,29 @@
+{
+ "type": "Feature",
+ "geometry": {
+   "type": "Point",
+   "coordinates": [
+     -97.748437,
+     30.2665
+   ]
+ },
+ "properties": {
+   "mission": "Final Countdown",
+   "battalion": "2nd Armored Division",
+   "timestamp": "2018-09-30T02:47:55.950Z",
+   "sensor_a": "",
+   "sensor_b": "",
+   "detections": [
+     {
+       "model": "model_a",
+       "class": "light",
+       "confidence": 0.8
+     },
+     {
+       "model": "model_b",
+       "class": "heavy",
+       "confidence": 0.6
+     }
+   ]
+ }
+}
