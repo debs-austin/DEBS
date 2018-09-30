@@ -1,0 +1,14 @@
+[Unit]
+Description=Drone Script Service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/pi/drone-hack/DEBS
+ExecStart=/usr/local/bin/npm start
+Restart=on-failure
+User=pi
+Environment=PORT=3000
+
+
+[Install]
+WantedBy=multi-user.target
