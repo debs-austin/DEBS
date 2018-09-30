@@ -6,7 +6,7 @@ const db = new PouchDB('offline-db')
 db.replicate.to("https://327025aa-ad5f-487a-a1b7-21e358ef00c7-bluemix:9e7caaaf567fb7d9235f6f91aa7c050ba7adef7fa7345c52974e395d57f45829@327025aa-ad5f-487a-a1b7-21e358ef00c7-bluemix.cloudant.com/debs", {
   live: true,
   retry: true
-}).on('change', info => console.log(`synced with remote DB`))
+}).on('change', () => console.log(`synced with remote DB`))
 
 app.get('/add', (req, res) => {
   const db = new PouchDB('offline-db')
@@ -41,7 +41,7 @@ app.get('/add', (req, res) => {
   }).then(doc => {
     res.send(doc)
   }).catch(err => {
-    console.log(err)
+    console.error(err)
   })
 })
 
@@ -52,7 +52,7 @@ app.get('/get', (req, res) => {
   }).then(docs => {
     res.json(docs.rows)
   }).catch(err => {
-    console.log(err)
+    console.error(err)
   })
 })
 
